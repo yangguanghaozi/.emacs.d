@@ -159,7 +159,8 @@ by Prelude.")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (setq molokai-theme-kit t)
 
-
+;; add scripts doc
+(add-to-list 'load-path "~/.emacs.d/scripts")
 ;; ;;set neotree
 (add-to-list 'load-path "~/.emacs.d/scripts/neotree")
 (require 'neotree)
@@ -170,6 +171,27 @@ by Prelude.")
 ;; use American English as ispell default dictionary  
 (ispell-change-dictionary "american" t)  
 
+;;add ggtags
+(require 'ggtags)
+
+;;add helm-projectile-grep/ack ignores
+(add-to-list 'projectile-globally-ignored-files "GTAGS")
+(add-to-list 'projectile-globally-ignored-files "GRTAGS")
+(add-to-list 'projectile-globally-ignored-files "GPATH")
+(add-to-list 'projectile-globally-ignored-files "*.html")
+(add-to-list 'projectile-globally-ignored-files "*org")
+
+;;auto highlight
+(require 'idle-highlight-mode)
+(autoload 'idle-highlight-mode "idle-highlight" "highlight the word the point is on" t)
+(add-hook 'find-file-hook 'idle-highlight-mode)
+(add-hook 'prog-mode-hook 'idle-highlight-mode)
+
+(require 'highlight-symbol)
+(global-set-key [(control f3)] 'highlight-symbol)
+(global-set-key [f3] 'highlight-symbol-next)
+(global-set-key [(shift f3)] 'highlight-symbol-prev)
+(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 ;;(defun install-packages ()
 ;;  "Install all required packages listed in packages.list."
 ;;  (unless package-archive-contents

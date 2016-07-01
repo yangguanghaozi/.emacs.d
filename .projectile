@@ -1,3 +1,14 @@
 /elpa
 /savefile
 /.cask
+-/target
+-/project
+-/.worksheet
+-/.settings
+-TAGS
+-GTAGS
+GTAGS
+-/lib_managed
+-/res
+-*.png
+-*.jpg

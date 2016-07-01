@@ -21,3 +21,7 @@ session*
 .cask
 tramp
 /var/pcache
+/.emacs.desktop.lock
+.emacs.desktop
+.desktop
+/.#init.el
